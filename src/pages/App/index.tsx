@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container } from "./style";
+import { Outlet } from "react-router-dom";
 
 type Position = {
   coords: {
@@ -21,12 +22,21 @@ export function App() {
     }
   }, []);
 
+  console.log(latitude, longitude);
+
   return (
     <Container>
-      <h1>Header</h1>
-      <h2>
-        {latitude} {longitude}
-      </h2>
+      <header>
+        <h1>Header</h1>
+      </header>
+
+      <main>
+        <Outlet />
+      </main>
+
+      <footer>
+        <h1>footer</h1>
+      </footer>
     </Container>
   );
 }
