@@ -3,8 +3,9 @@ import axios from "axios";
 const envAPI = import.meta.env.VITE_API;
 const envApiKey = import.meta.env.VITE_KEY;
 
-export const instance = axios.create({
+export const API = axios.create({
   baseURL: envAPI,
+  params:{
+    key:envApiKey,
+  }
 });
-
-instance.defaults.headers.common["Authorization"] = envApiKey;

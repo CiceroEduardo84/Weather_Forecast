@@ -1,0 +1,37 @@
+import { useQuery } from "@tanstack/react-query";
+
+type Position = {
+  coords: {
+    latitude: number;
+    longitude: number;
+  };
+};
+
+export function useQueryGeolocation() {
+  function getQueryGeolocation() {
+    return new Promise<{ latitude: number; longitude: number }>((resolve, reject) => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position: Position) => {
+            const { latitude, longitude } = position.coords;
+            resolve({ latitude, longitude });
+          },
+          (error) => {
+            reject(error);
+          }
+        );
+      } else {
+        reject(new Error("Geolocation not supported"));
+      }
+    });
+  }
+
+  const dataQuery = useQuery({
+    queryKey: ["getQueryGeolocation"],
+    queryFn: getQueryGeolocation,
+  });
+
+  console.log(dataQuery);
+
+  return dataQuery;
+}

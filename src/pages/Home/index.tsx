@@ -1,31 +1,16 @@
+import { useQueryGeolocation } from "../../hooks/useQueryGeolocation";
+import { useQueryWeatherForecastPage } from "../../hooks/useQueryWeatherForecastPage";
 import { Container } from "./style";
-import { useEffect, useState } from "react";
-
-type Position = {
-  coords: {
-    latitude: number;
-    longitude: number;
-  };
-};
 
 export function Home() {
-  const [latitude, setLatitude] = useState<number>();
-  const [longitude, setLongitude] = useState<number>();
+  const { latitude, longitude } = useQueryGeolocation();
+  const { data } = useQueryWeatherForecastPage();
 
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position: Position) => {
-        setLatitude(position.coords.latitude);
-        setLongitude(position.coords.longitude);
-      });
-    }
-  }, []);
-
-  console.log(latitude, longitude);
+  // console.log(latitude, longitude);
 
   return (
     <Container>
-      <h1>Home</h1>
+      <h1>{latitude}</h1>
     </Container>
   );
 }
