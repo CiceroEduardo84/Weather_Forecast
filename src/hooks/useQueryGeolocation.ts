@@ -10,20 +10,26 @@ type Position = {
 export function useQueryGeolocation() {
   // coordinated from the browser
   async function getQueryGeolocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(async (position: Position) => {
-        const { latitude, longitude } = await position.coords;
+    return new Promise<{ latitude: number; longitude: number }>(
+      (resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(
+          (position: Position) => {
+            const { latitude, longitude } = position.coords;
 
-        return { latitude, longitude };
-      });
-    }
+            resolve({ latitude, longitude });
+          },
+          (error) => {
+            reject(error.code == 1 ? "Localização não encontrada!" : error);
+          }
+        );
+      }
+    );
   }
 
   const dataQuery = useQuery({
     queryKey: ["getQueryGeolocation"],
     queryFn: getQueryGeolocation,
   });
-  console.log(dataQuery);
 
-  return dataQuery;
+  return {...dataQuery};
 }
