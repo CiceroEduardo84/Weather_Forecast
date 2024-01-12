@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 27.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 1200 800"
+   style="enable-background:new 0 0 1200 800;"
+   xml:space="preserve"
+   id="svg413"
+   sodipodi:docname="background_clouds.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs413"><inkscape:path-effect
+     effect="bspline"
+     id="path-effect433"
+     is_visible="true"
+     lpeversion="1.3"
+     weight="33.333333"
+     steps="2"
+     helper_size="0"
+     apply_no_weight="true"
+     apply_with_weight="true"
+     only_selected="false"
+     uniform="false" /><color-profile
+     name="Agfa-:-Swop-Standard"
+     xlink:href="../../../Windows/system32/spool/drivers/color/RSWOP.icm"
+     id="color-profile1" /><linearGradient
+     id="linearGradient413"
+     inkscape:collect="always"><stop
+       style="stop-color:#ffffff;stop-opacity:1;"
+       offset="0"
+       id="stop413" /><stop
+       style="stop-color:#ffffff;stop-opacity:0;"
+       offset="1"
+       id="stop414" /></linearGradient><linearGradient
+     inkscape:collect="always"
+     xlink:href="#linearGradient413"
+     id="linearGradient414"
+     x1="884.68134"
+     y1="460.65747"
+     x2="957.28546"
+     y2="773.63153"
+     gradientUnits="userSpaceOnUse" /><filter
+     inkscape:collect="always"
+     style="color-interpolation-filters:sRGB"
+     id="filter2"
+     x="-0.049476269"
+     y="-0.14049959"
+     width="1.0989525"
+     height="1.2809992"><feGaussianBlur
+       inkscape:collect="always"
+       stdDeviation="16.789708"
+       id="feGaussianBlur2" /></filter></defs><sodipodi:namedview
+   id="namedview413"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="0.313125"
+   inkscape:cx="1047.505"
+   inkscape:cy="589.22156"
+   inkscape:window-width="1366"
+   inkscape:window-height="697"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="g413" />
+
+<g
+   id="Graphic_Elemnets">
+	
+<g
+   id="g413"
+   inkscape:highlight-color="#6e67d1"
+   style="enable-background:new 0 0 1200 800">
+		<defs
+   id="defs1">
+			<rect
+   id="SVGID_1_"
+   width="1200"
+   height="800"
+   x="0"
+   y="0" />
+		</defs>
+		<clipPath
+   id="SVGID_00000101788765680635144310000008735771084488537003_">
+			<use
+   xlink:href="#SVGID_1_"
+   style="overflow:visible"
+   id="use1" />
+		</clipPath>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	<path
+   style="display:inline;fill:url(#linearGradient414);filter:url(#filter2)"
+   d="m 1403.689,661.44 h 0.02 l -41.517,85.93968 -772.91986,-1.92412 c 18.21,0 5.39621,13.27173 4.67686,-23.74556 2,-30.62 25.86,-56.2 57.4,-59.34 8.88,-0.88 17.5,0.11 25.51,2.63 -0.24,-1.44 -0.51,-2.87 -0.66,-4.35 -4.01,-40.22 25.35,-76.08 65.58,-80.08 32.46,-3.24 62.05,15.28 74.38,43.69 5.23,-2.62 11,-4.4 17.18,-5.01 5.63,-0.56 11.13,-0.14 16.34,1.1 9.5,-17.52 28.05,-29.41 49.39,-29.41 17.55,0 33.24,8.06 43.53,20.66 8.06,-40 43.38,-70.13 85.78,-70.13 17.8,0 34.39,5.31 48.2,14.47 -0.19,-1.51 -0.27,-3.05 -0.27,-4.62 0,-21.87 17.71,-39.62 39.59,-39.62 5.47,0 10.7,1.1 15.46,3.14 1.76,-30.04 26.69,-53.87 57.17,-53.87 20.39,0 38.3,10.67 48.45,26.771 10.65,-4.95 22.53,-7.7 35.05,-7.7 46.14,0 83.53,37.39 83.53,83.52 0,11.17 -2.2,21.82 -6.19,31.53 30.9,5.4 54.34,32.36 54.34,64.8 0,0.519 -0.01,1.029 -0.02,1.549 z"
+   clip-path="url(#SVGID_00000101788765680635144310000008735771084488537003_)"
+   id="path413"
+   sodipodi:nodetypes="ccccccccccccscscsscscsscsc"
+   transform="matrix(1.7427042,0,0,1.7427042,-895.37411,-513.74191)" /></g></g>
+</svg>
