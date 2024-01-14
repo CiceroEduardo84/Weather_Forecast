@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import cloudsBackground from "../assets/background_clouds.svg";
 
 export const GlobalStyle = createGlobalStyle`
   :root{
@@ -17,6 +18,13 @@ export const GlobalStyle = createGlobalStyle`
     border: none;
     font-family: "Montserrat", "Roboto", sans-serif;
     
+    background-color: ${({ theme }) => theme.colors.pestel.purple};
+    background-image: url(${cloudsBackground});
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-attachment: fixed;
+
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
