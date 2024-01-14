@@ -1,3 +1,9 @@
+import { Container } from "./style";
+
 export function Footer() {
-  return <h1>Footer</h1>;
+  return (
+    <Container>
+      <h1>Footer</h1>
+    </Container>
+  );
 }

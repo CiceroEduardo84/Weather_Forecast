@@ -1,9 +1,10 @@
-import { useQueryWeatherForecastPage } from "../../hooks/useQueryWeatherForecastPage";
+import { Container } from "./style";
 
 export function Header() {
-  const location = undefined;
-  const { data } = useQueryWeatherForecastPage(location!);
 
-  console.log(data);
-  return <h1>Header</h1>;
+  return (
+    <Container>
+      <h1>header</h1>
+    </Container>
+  );
 }
