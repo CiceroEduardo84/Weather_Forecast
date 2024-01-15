@@ -5,13 +5,12 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 1.4rem 3.5rem;
+  padding: 1.4rem 2rem;
 
   form {
-    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 1rem;
   }
 
@@ -32,13 +31,12 @@ export const Container = styled.header`
   }
 
   button {
-    width: 5rem;
+    width: 4.8rem;
     height: 3.6rem;
-    padding: 0 0.8rem;
-    border-radius: 1rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    border-radius: 1rem;
     box-shadow: -1px 1px 3px 0px #0005;
     background-color: ${({ theme }) => theme.colors.pestel.violet};
 
@@ -50,6 +48,23 @@ export const Container = styled.header`
     &:hover {
       cursor: pointer;
       filter: brightness(1.05);
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 2.8rem 2rem;
+
+    form {
+      gap: 1.2rem;
+    }
+
+    #inputSearch {
+      width: 28rem;
+      padding: 0 1.2rem;
+    }
+
+    button {
+      width: 7.6rem;
     }
   }
 `;
