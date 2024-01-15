@@ -34,7 +34,7 @@ export function Header() {
             type="text"
             id="inputSearch"
             autoFocus
-            placeholder="Pesquisar cidade..."
+            placeholder="Digite uma cidade..."
             {...register("search", {
               required: "Preencha o nome da cidade!",
             })}

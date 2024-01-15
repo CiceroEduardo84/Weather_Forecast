@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1.6rem;
     color: ${({ theme }) => theme.colors.neutral.black};
     border: none;
-    font-family: "Montserrat", "Roboto", sans-serif;
+    font-family: 'Inter', sans-serif;;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
