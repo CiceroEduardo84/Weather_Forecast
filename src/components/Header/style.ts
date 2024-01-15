@@ -64,7 +64,25 @@ export const Container = styled.header`
     }
 
     button {
-      width: 7.6rem;
+      width: 6.8rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    /* padding: 4rem 2rem; */
+
+    form {
+      gap: 1rem;
+    }
+
+    #inputSearch {
+      width: 32rem;
+      height: 4rem;
+    }
+
+    button {
+      width: 8rem;
+      height: 4rem;
     }
   }
 `;
