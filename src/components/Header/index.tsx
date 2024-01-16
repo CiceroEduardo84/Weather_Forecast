@@ -2,6 +2,8 @@ import { Container } from "./style";
 import imgSearch from "../../assets/Search.svg";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { useQuerySearchCity } from "../../hooks/useQuerySearchCity";
+import { ChangeEvent, useEffect } from "react";
 
 type Input = {
   search: string;
@@ -9,6 +11,7 @@ type Input = {
 
 export function Header() {
   const navigate = useNavigate();
+  const { data, setCity } = useQuerySearchCity();
   const {
     register,
     handleSubmit,
@@ -16,12 +19,21 @@ export function Header() {
     reset,
   } = useForm<Input>();
 
-  const onsubmit: SubmitHandler<Input> = (data) => {
+  const onsubmit: SubmitHandler<Input> = (search) => {
     navigate(`/`);
-    console.log(data);
-
+    console.log(search);
     reset();
   };
+
+  function searchOnchage(event: ChangeEvent<HTMLInputElement>) {
+    setCity(event.target.value);
+  }
+
+  useEffect(() => {
+    data?.map((data) => {
+      console.log(data.name);
+    });
+  }, [data]);
 
   return (
     <Container>
@@ -37,6 +49,7 @@ export function Header() {
             placeholder="Digite uma cidade..."
             {...register("search", {
               required: "Preencha o nome da cidade!",
+              onChange: searchOnchage,
             })}
           />
 
