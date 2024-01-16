@@ -1,4 +1,5 @@
 import { Container } from "./style";
+import iconLocation from "../../assets/Location.png";
 
 type Props = {
   name: string;
@@ -9,9 +10,10 @@ type Props = {
 export function CardSearch({ name, region, country }: Props) {
   return (
     <Container>
-      <h1>
+      <img src={iconLocation} />
+      <strong>
         {name}-{region}, {country}
-      </h1>
+      </strong>
     </Container>
   );
 }

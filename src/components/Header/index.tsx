@@ -3,8 +3,8 @@ import imgSearch from "../../assets/Search.svg";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useQuerySearchCity } from "../../hooks/useQuerySearchCity";
-import { CardSearch } from "../CardSearch";
 import { ChangeEvent } from "react";
+import { CardSearch } from "../CardSearch";
 
 type Input = {
   search: string;
@@ -57,18 +57,20 @@ export function Header() {
         </form>
       </div>
 
-      <div className="boxSearch">
-        {data?.map(({ id, name, region, country }) => {
-          return (
-            <CardSearch
-              key={id}
-              name={name}
-              region={region}
-              country={country}
-            />
-          );
-        })}
-      </div>
+      {data && data.length > 0 && (
+        <div className="boxSearch">
+          <div className="locations">
+            {data.map(({ id, name, region, country }) => (
+              <CardSearch
+                key={id}
+                name={name}
+                region={region}
+                country={country}
+              />
+            ))}
+          </div>
+        </div>
+      )}
     </Container>
   );
 }

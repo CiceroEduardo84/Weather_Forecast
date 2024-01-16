@@ -51,6 +51,42 @@ export const Container = styled.header`
     }
   }
 
+  .boxSearch {
+    position: fixed;
+    width: 32rem;
+    height: calc(100vh - 6.4rem);
+    top: 6.4rem;
+    padding: 0.4rem 0.4rem;
+    background-color: ${({ theme }) => theme.colors.neutral.white};
+    overflow-y: auto;
+    /* Works on firefox */
+    scrollbar-width: thin;
+    scrollbar-color: ${({ theme }) => theme.colors.neutral.gray} #0003;
+
+    .locations {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+  }
+
+  /* Works on Chrome, Edge, and Safari */
+  .boxSearch::-webkit-scrollbar {
+    width: 0rem;
+  }
+
+  .boxSearch::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.colors.neutral.gray};
+    border-radius: 10px;
+  }
+
+  .boxSearch::-webkit-scrollbar-thumb {
+    background-color: #0003;
+    border-radius: 10px;
+  }
+
   @media (min-width: 768px) {
     padding: 2.8rem 2rem;
 
@@ -66,11 +102,21 @@ export const Container = styled.header`
     button {
       width: 6.8rem;
     }
+
+    .boxSearch {
+      min-width: 36rem;
+      height: auto;
+      max-height: 32rem;
+      top: 9.2rem;
+      border-radius: 10px;
+    }
+
+    .boxSearch::-webkit-scrollbar {
+      width: 0.8rem;
+    }
   }
 
   @media (min-width: 1024px) {
-    /* padding: 4rem 2rem; */
-
     form {
       gap: 1rem;
     }
@@ -83,6 +129,12 @@ export const Container = styled.header`
     button {
       width: 8rem;
       height: 4rem;
+    }
+
+    .boxSearch {
+      min-width: 41rem;
+      max-height: 36rem;
+      top: 9.6rem;
     }
   }
 `;

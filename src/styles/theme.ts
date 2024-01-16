@@ -3,6 +3,7 @@ export const AppTheme = {
     neutral: {
       black: "#262626",
       white: "#FDFFFE",
+      gray: "#E6E6E6",
     },
     pestel: {
       pink: "#F5C3F8",
