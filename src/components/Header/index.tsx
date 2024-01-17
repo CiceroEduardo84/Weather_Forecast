@@ -1,7 +1,7 @@
 import { Container } from "./style";
 import imgSearch from "../../assets/Search.svg";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useQuerySearchCity } from "../../hooks/useQuerySearchCity";
 import { ChangeEvent, MouseEventHandler } from "react";
 import { CardSearch } from "../CardSearch";
@@ -11,6 +11,7 @@ type Input = {
 };
 
 export function Header() {
+  const navigate = useNavigate();
   const { data, setCity } = useQuerySearchCity();
   const {
     register,
@@ -25,7 +26,8 @@ export function Header() {
   };
 
   const onsubmit: SubmitHandler<Input> = (search) => {
-    console.log(search);
+    navigate(`/${search.search}`);
+    setCity("");
     reset();
   };
 
