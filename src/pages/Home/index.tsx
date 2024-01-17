@@ -1,10 +1,11 @@
 import { useQueryWeatherForecastPage } from "../../hooks/useQueryWeatherForecastPage";
 import { Container } from "./style";
 import refresh from "../../assets/refresh.svg";
+import { useParams } from "react-router-dom";
 
 export function Home() {
-  const location = undefined;
-  const { data, isLoading, error } = useQueryWeatherForecastPage(location!);
+  const { name } = useParams();
+  const { data, isLoading, error } = useQueryWeatherForecastPage(name!);
 
   if (error) console.error(error);
 

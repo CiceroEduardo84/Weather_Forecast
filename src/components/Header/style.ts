@@ -65,7 +65,6 @@ export const Container = styled.header`
 
     .locations {
       display: flex;
-      align-items: center;
       justify-content: start;
       flex-direction: column;
       gap: 0.4rem;
@@ -104,7 +103,7 @@ export const Container = styled.header`
     }
 
     .boxSearch {
-      min-width: 36rem;
+      width: 36rem;
       height: auto;
       max-height: 32rem;
       top: 9.2rem;

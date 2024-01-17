@@ -1,9 +1,9 @@
 import { Container } from "./style";
 import imgSearch from "../../assets/Search.svg";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useQuerySearchCity } from "../../hooks/useQuerySearchCity";
-import { ChangeEvent } from "react";
+import { ChangeEvent, MouseEventHandler } from "react";
 import { CardSearch } from "../CardSearch";
 
 type Input = {
@@ -11,7 +11,6 @@ type Input = {
 };
 
 export function Header() {
-  const navigate = useNavigate();
   const { data, setCity } = useQuerySearchCity();
   const {
     register,
@@ -20,14 +19,23 @@ export function Header() {
     reset,
   } = useForm<Input>();
 
+  const onClick: MouseEventHandler = () => {
+    setCity("");
+    reset();
+  };
+
   const onsubmit: SubmitHandler<Input> = (search) => {
-    navigate(`/?q=Iguatu`);
     console.log(search);
     reset();
   };
 
   function searchOnchage(event: ChangeEvent<HTMLInputElement>) {
     setCity(event.target.value);
+  }
+
+  function onPaste(e: React.ClipboardEvent<HTMLInputElement>) {
+    const text = e.clipboardData.getData("text");
+    setCity(text);
   }
 
   return (
@@ -42,6 +50,7 @@ export function Header() {
               type="text"
               id="inputSearch"
               autoFocus
+              onPaste={onPaste}
               placeholder="Digite uma cidade..."
               {...register("search", {
                 required: "Preencha o nome da cidade!",
@@ -61,12 +70,14 @@ export function Header() {
         <div className="boxSearch">
           <div className="locations">
             {data.map(({ id, name, region, country }) => (
-              <CardSearch
-                key={id}
-                name={name}
-                region={region}
-                country={country}
-              />
+              <Link key={name} to={`/${name}`} onClick={onClick}>
+                <CardSearch
+                  key={id}
+                  name={name}
+                  region={region}
+                  country={country}
+                />
+              </Link>
             ))}
           </div>
         </div>
