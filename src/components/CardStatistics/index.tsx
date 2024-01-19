@@ -13,8 +13,9 @@ export function CardStatistics({ img, name, data, type }: Props) {
       <img src={img} />
       <div className="datas">
         <span>{name}</span>
-        <span>{data}</span>
-        <span>{type}</span>
+        <strong>
+          {data} <span>{type}</span>
+        </strong>
       </div>
     </Container>
   );
