@@ -7,12 +7,21 @@ import locationIcon from "../../assets/LocationWhite.png";
 import wind from "../../assets/weatherwind.svg";
 import moisture from "../../assets/weathermoisture.svg";
 import rain from "../../assets/weatherrain.svg";
+import { useEffect, useRef } from "react";
 
 export function Home() {
   const { name } = useParams();
   const { data, isLoading, error } = useQueryWeatherForecastPage(name!);
 
+  const divRef = useRef<HTMLDivElement>(null);
+
   if (error) console.error(error);
+
+  useEffect(() => {
+    if (divRef.current && !isLoading) {
+      divRef.current.scrollTo({ left: 60 });
+    }
+  }, [isLoading, divRef, data]);
 
   return (
     <Container>
@@ -50,30 +59,32 @@ export function Home() {
                 </div>
               </div>
 
-              <div className="boxStatistics">
-                <CardStatistics
-                  key={"Vento"}
-                  img={wind}
-                  name="Vento"
-                  data={17}
-                  type={"km/h"}
-                />
+              <div className="boxStatistics" ref={divRef}>
+                <div className="statistics">
+                  <CardStatistics
+                    key={"Vento"}
+                    img={wind}
+                    name="Vento"
+                    data={17}
+                    type={"km/h"}
+                  />
 
-                <CardStatistics
-                  key={"Umidade"}
-                  img={moisture}
-                  name="Umidade"
-                  data={31}
-                  type={"%"}
-                />
+                  <CardStatistics
+                    key={"Umidade"}
+                    img={moisture}
+                    name="Umidade"
+                    data={31}
+                    type={"%"}
+                  />
 
-                <CardStatistics
-                  key={"Chuva"}
-                  img={rain}
-                  name="Chuva"
-                  data={10}
-                  type={"%"}
-                />
+                  <CardStatistics
+                    key={"Chuva"}
+                    img={rain}
+                    name="Chuva"
+                    data={10}
+                    type={"%"}
+                  />
+                </div>
               </div>
             </div>
 

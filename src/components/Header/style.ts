@@ -62,6 +62,7 @@ export const Container = styled.header`
     /* Works on firefox */
     scrollbar-width: thin;
     scrollbar-color: ${({ theme }) => theme.colors.neutral.gray} #0003;
+    z-index: 1;
 
     .locations {
       display: flex;
