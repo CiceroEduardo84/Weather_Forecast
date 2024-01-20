@@ -13,14 +13,33 @@ export const Container = styled.main`
     height: 22rem;
     margin: auto;
     border-radius: 1rem;
-    background-color: ${({ theme }) => theme.colors.pestel.violet};
 
+    display: grid;
+    grid-template-areas: "b b";
+    grid-template-columns: repeat(2, 100%);
+    grid-template-rows: 100%;
+
+    background-color: ${({ theme }) => theme.colors.pestel.violet};
     box-shadow: -1px 1px 3px 0px #0005;
 
-    .CardTemperature {
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+
+    &::-webkit-scrollbar {
+      height: 0rem;
       width: 100%;
-      height: 100%;
-      border-radius: 1rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      display: none;
+    }
+
+    .CardTemperature {
       display: flex;
       justify-content: space-between;
       flex-direction: column;
@@ -31,6 +50,8 @@ export const Container = styled.main`
       background-repeat: no-repeat;
       background-position: right bottom;
       background-attachment: local;
+
+      scroll-snap-align: center;
 
       .boxLocation {
         width: 100%;
@@ -106,6 +127,8 @@ export const Container = styled.main`
         align-items: center;
 
         overflow-x: auto;
+        scrollbar-width: none;
+        scroll-snap-type: x mandatory;
 
         &::-webkit-scrollbar {
           height: 0.4rem;
@@ -128,6 +151,71 @@ export const Container = styled.main`
           grid-template-rows: 6rem;
           gap: 1rem;
         }
+      }
+    }
+
+    .cardAirQuality {
+      padding: 0.4rem;
+
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      scroll-snap-align: center;
+      text-shadow: -1px 1px 3px #0005;
+
+      .title {
+        width: 100%;
+        margin-top: 1rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+
+        img {
+          width: 4.4rem;
+          height: 4.4rem;
+
+          filter: drop-shadow(-1px 1px 3px #0005);
+        }
+
+        span {
+          font-weight: 600;
+          font-size: 1.6rem;
+          color: ${({ theme }) => theme.colors.neutral.white};
+        }
+      }
+
+      .airQuality {
+        width: 100%;
+        height: 9.2rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+
+        span,
+        strong {
+          color: ${({ theme }) => theme.colors.neutral.white};
+        }
+
+        span {
+          font-size: 1.6rem;
+        }
+
+        strong {
+          font-weight: 700;
+          font-size: 4.4rem;
+        }
+      }
+
+      .quality {
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-around;
       }
     }
   }

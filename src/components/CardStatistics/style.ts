@@ -12,10 +12,7 @@ export const Container = styled.div`
   background: #6660c8aa;
   box-shadow: -1px 1px 3px 0px #0002;
 
-  &:hover {
-    filter: brightness(1.1);
-    transform: scale(1.01);
-  }
+  scroll-snap-align: center;
 
   img {
     width: 3.6rem;

@@ -7,7 +7,9 @@ import locationIcon from "../../assets/LocationWhite.png";
 import wind from "../../assets/weatherwind.svg";
 import moisture from "../../assets/weathermoisture.svg";
 import rain from "../../assets/weatherrain.svg";
+import leaf from "../../assets/leaf.svg";
 import { useEffect, useRef } from "react";
+import { CardPollutants } from "../../components/CardPollutants";
 
 export function Home() {
   const { name } = useParams();
@@ -53,6 +55,7 @@ export function Home() {
                   <strong>
                     18 <span>°C</span>
                   </strong>
+
                   <span>
                     22° <span>16°</span>
                   </span>
@@ -88,9 +91,26 @@ export function Home() {
               </div>
             </div>
 
-            {/* <div className="boxAirQuality">
-              <h1>{data?.location.name} + aaaa</h1>
-            </div> */}
+            <div className="cardAirQuality">
+              <div className="title">
+                <img src={leaf} alt="folha de árvore" />
+                <span>Qualidade do ar</span>
+              </div>
+
+              <div className="airQuality">
+                <span>Boa</span>
+                <strong>21</strong>
+              </div>
+
+              <div className="quality">
+                <CardPollutants key={"CO"} data={7.3} name={"CO"} />
+                <CardPollutants key={"O3"} data={5.3} name={"O3"} />
+                <CardPollutants key={"NO2"} data={0.3} name={"NO2"} />
+                <CardPollutants key={"SO2"} data={3.3} name={"SO2"} />
+                <CardPollutants key={"PM10"} data={9.3} name={"PM10"} />
+                <CardPollutants key={"PM2.5"} data={7.3} name={"PM2.5"} />
+              </div>
+            </div>
           </section>
           {/* <section className="boxWeekWeather"></section> */}
         </article>
