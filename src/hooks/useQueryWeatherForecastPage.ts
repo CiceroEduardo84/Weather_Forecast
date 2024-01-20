@@ -6,7 +6,7 @@ export function useQueryWeatherForecastPage(location: string | number) {
   // API Request
   async function getWeatherForecast(location: string | number = "auto:ip") {
     const { data } = await API.get(
-      `&q=${location}&days=7&aqi=no&alerts=no&lang=pt`
+      `&q=${location}&days=7&aqi=yes&alerts=no&lang=pt`
     );
     return data as WeatherData;
   }
