@@ -45,19 +45,23 @@ export function Home() {
                 </Link>
 
                 <div className="location">
-                  <span>{data?.location.name}-ce, Brazil</span>
-                  <span>11/01/2024, 13:03</span>
+                  <span>
+                    {data.location.name}-{data.location.region},
+                    {data.location.country}
+                  </span>
+                  <span>{data.location.localtime}</span>
                 </div>
               </div>
 
               <div className="temperature">
                 <div className="datas">
                   <strong>
-                    18 <span>°C</span>
+                    {data.current.temp_c} <span>°C</span>
                   </strong>
 
                   <span>
-                    22° <span>16°</span>
+                    {data.forecast.forecastday[0].day.maxtemp_c}°
+                    <span> {data.forecast.forecastday[0].day.mintemp_c}°</span>
                   </span>
                 </div>
               </div>
@@ -68,7 +72,7 @@ export function Home() {
                     key={"Vento"}
                     img={wind}
                     name="Vento"
-                    data={17}
+                    data={data.current.wind_kph}
                     type={"km/h"}
                   />
 
@@ -76,7 +80,7 @@ export function Home() {
                     key={"Umidade"}
                     img={moisture}
                     name="Umidade"
-                    data={31}
+                    data={data.current.humidity}
                     type={"%"}
                   />
 
@@ -84,8 +88,8 @@ export function Home() {
                     key={"Chuva"}
                     img={rain}
                     name="Chuva"
-                    data={10}
-                    type={"%"}
+                    data={data.current.precip_mm}
+                    type={"mm"}
                   />
                 </div>
               </div>
@@ -103,12 +107,41 @@ export function Home() {
               </div>
 
               <div className="quality">
-                <CardPollutants key={"CO"} data={7.3} name={"CO"} />
-                <CardPollutants key={"O3"} data={5.3} name={"O3"} />
-                <CardPollutants key={"NO2"} data={0.3} name={"NO2"} />
-                <CardPollutants key={"SO2"} data={3.3} name={"SO2"} />
-                <CardPollutants key={"PM10"} data={9.3} name={"PM10"} />
-                <CardPollutants key={"PM2.5"} data={7.3} name={"PM2.5"} />
+                <CardPollutants
+                  key={"CO"}
+                  data={data.current.air_quality.co}
+                  name={"CO"}
+                />
+
+                <CardPollutants
+                  key={"O3"}
+                  data={data.current.air_quality.o3}
+                  name={"O3"}
+                />
+
+                <CardPollutants
+                  key={"NO2"}
+                  data={data.current.air_quality.no2}
+                  name={"NO2"}
+                />
+
+                <CardPollutants
+                  key={"SO2"}
+                  data={data.current.air_quality.so2}
+                  name={"SO2"}
+                />
+
+                <CardPollutants
+                  key={"PM10"}
+                  data={data.current.air_quality.pm10}
+                  name={"PM10"}
+                />
+
+                <CardPollutants
+                  key={"PM2.5"}
+                  data={data.current.air_quality.pm2_5}
+                  name={"PM2.5"}
+                />
               </div>
             </div>
           </section>

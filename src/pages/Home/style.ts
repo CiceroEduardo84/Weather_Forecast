@@ -92,14 +92,12 @@ export const Container = styled.main`
           flex-direction: column;
 
           strong {
-            width: 7.2rem;
             font-size: 6.2rem;
             display: flex;
+            justify-content: center;
             color: ${({ theme }) => theme.colors.neutral.white};
 
             span {
-              width: 7.2rem;
-
               margin-top: 1.2rem;
               font-size: 1.8rem;
 
@@ -108,6 +106,9 @@ export const Container = styled.main`
           }
 
           span {
+            display: flex;
+            gap: 0.6rem;
+
             font-weight: bold;
             font-size: 1.6rem;
 
