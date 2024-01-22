@@ -5,9 +5,8 @@ export const Container = styled.div`
   border-radius: 1rem;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-direction: row;
-  gap: 1.2rem;
 
   background: #6660c8aa;
   box-shadow: -1px 1px 3px 0px #0002;

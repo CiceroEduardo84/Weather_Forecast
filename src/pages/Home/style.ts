@@ -11,6 +11,7 @@ export const Container = styled.main`
   .boxWeatherForecast {
     width: 26rem;
     height: 22rem;
+    /* position: relative; */
     margin: auto;
     border-radius: 1rem;
 
@@ -37,6 +38,15 @@ export const Container = styled.main`
 
     &::-webkit-scrollbar-thumb {
       display: none;
+    }
+
+    .twoClouds {
+      width: 6rem;
+      height: 3rem;
+      position: absolute;
+      top: 0.8rem;
+      right: 78%;
+      z-index: 1;
     }
 
     .CardTemperature {
@@ -66,10 +76,13 @@ export const Container = styled.main`
         }
 
         .location {
+          max-width: 55%;
           display: flex;
           flex-direction: column;
 
           span {
+            width: 100%;
+            word-break: break-all;
             font-size: 1.2rem;
 
             color: ${({ theme }) => theme.colors.neutral.white};

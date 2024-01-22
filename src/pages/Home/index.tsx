@@ -1,21 +1,35 @@
-import { useQueryWeatherForecastPage } from "../../hooks/useQueryWeatherForecastPage";
-import { Container } from "./style";
-import refresh from "../../assets/refresh.svg";
-import { Link, useParams } from "react-router-dom";
-import { CardStatistics } from "../../components/CardStatistics";
 import locationIcon from "../../assets/LocationWhite.png";
-import wind from "../../assets/weatherwind.svg";
 import moisture from "../../assets/weathermoisture.svg";
+import wind from "../../assets/weatherwind.svg";
 import rain from "../../assets/weatherrain.svg";
+import clouds from "../../assets/twoClouds.svg";
+import refresh from "../../assets/refresh.svg";
 import leaf from "../../assets/leaf.svg";
-import { useEffect, useRef } from "react";
+
+import { useQueryWeatherForecastPage } from "../../hooks/useQueryWeatherForecastPage";
+import { CardStatistics } from "../../components/CardStatistics";
 import { CardPollutants } from "../../components/CardPollutants";
+import { Link, useParams } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import { Container } from "./style";
 
 export function Home() {
   const { name } = useParams();
   const { data, isLoading, error } = useQueryWeatherForecastPage(name!);
 
   const divRef = useRef<HTMLDivElement>(null);
+
+  const localData = (data: string) => {
+    const localDate = new Date(data);
+
+    return localDate.toLocaleDateString("pt-br", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  };
 
   if (error) console.error(error);
 
@@ -38,6 +52,8 @@ export function Home() {
       {data && (
         <article>
           <section className="boxWeatherForecast">
+            <img className="twoClouds" src={clouds} alt="duas nuvens uma sobreposta a outra" />
+
             <div className="CardTemperature">
               <div className="boxLocation">
                 <Link to={"/"}>
@@ -49,7 +65,7 @@ export function Home() {
                     {data.location.name}-{data.location.region},
                     {data.location.country}
                   </span>
-                  <span>{data.location.localtime}</span>
+                  <span>{localData(data.location.localtime)}</span>
                 </div>
               </div>
 
@@ -103,7 +119,7 @@ export function Home() {
 
               <div className="airQuality">
                 <span>Boa</span>
-                <strong>21</strong>
+                <strong>{data.current.air_quality["gb-defra-index"]}</strong>
               </div>
 
               <div className="quality">
