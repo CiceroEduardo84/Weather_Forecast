@@ -12,6 +12,7 @@ import { CardPollutants } from "../../components/CardPollutants";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useRef } from "react";
 import { Container } from "./style";
+import { CardDays } from "../../components/CardDays";
 
 export function Home() {
   const { name } = useParams();
@@ -52,7 +53,11 @@ export function Home() {
       {data && (
         <article>
           <section className="boxWeatherForecast">
-            <img className="twoClouds" src={clouds} alt="duas nuvens uma sobreposta a outra" />
+            <img
+              className="twoClouds"
+              src={clouds}
+              alt="duas nuvens uma sobreposta a outra"
+            />
 
             <div className="CardTemperature">
               <div className="boxLocation">
@@ -161,7 +166,24 @@ export function Home() {
               </div>
             </div>
           </section>
-          {/* <section className="boxWeekWeather"></section> */}
+
+          <section className="boxWeekWeather">
+            {data.forecast.forecastday.map(({ day, date }) => {
+              const dayDate = new Date(date).toLocaleDateString("pt-br", {
+                weekday: "long",
+              });
+
+              return (
+                <CardDays
+                  key={dayDate}
+                  name={dayDate}
+                  img={day.condition.icon}
+                  min={day.mintemp_c}
+                  max={day.maxtemp_c}
+                />
+              );
+            })}
+          </section>
         </article>
       )}
     </Container>

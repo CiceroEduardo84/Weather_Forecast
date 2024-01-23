@@ -1,16 +1,16 @@
 import { Container } from "./style";
 
 type Props = {
-  day: string;
+  name: string;
   img: string;
   min: number;
   max: number;
 };
 
-export function CardDays({ day, img, min, max }: Props) {
+export function CardDays({ name, img, min, max }: Props) {
   return (
     <Container>
-      <h1>{day}</h1>
+      <h1>{name}</h1>
       <img src={img} />
       <span>
         {min}
