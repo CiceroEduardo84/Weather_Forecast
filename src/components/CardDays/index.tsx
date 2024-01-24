@@ -13,8 +13,9 @@ export function CardDays({ name, img, min, max }: Props) {
       <h1>{name}</h1>
       <img src={img} />
       <span>
-        {min}
-        {max}
+        {min}°
+        {" "}
+        {max}°
       </span>
     </Container>
   );
