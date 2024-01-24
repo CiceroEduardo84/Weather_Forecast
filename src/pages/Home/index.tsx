@@ -9,16 +9,18 @@ import leaf from "../../assets/leaf.svg";
 import { useQueryWeatherForecastPage } from "../../hooks/useQueryWeatherForecastPage";
 import { CardStatistics } from "../../components/CardStatistics";
 import { CardPollutants } from "../../components/CardPollutants";
+import { CardDays } from "../../components/CardDays";
+import { Container } from "./style";
+
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useRef } from "react";
-import { Container } from "./style";
-import { CardDays } from "../../components/CardDays";
 
 export function Home() {
   const { name } = useParams();
   const { data, isLoading, error } = useQueryWeatherForecastPage(name!);
-
   const divRef = useRef<HTMLDivElement>(null);
+
+  if (error) console.error(error);
 
   const localData = (data: string) => {
     const localDate = new Date(data);
@@ -45,8 +47,6 @@ export function Home() {
     return qualityMap[data] || "";
   };
 
-  if (error) console.error(error);
-
   useEffect(() => {
     if (divRef.current && !isLoading) {
       divRef.current.scrollTo({ left: 60 });
@@ -60,7 +60,6 @@ export function Home() {
           <img src={refresh} alt="carregando..." />
         </span>
       )}
-
       {!isLoading && error && <span className="feedbackError">Error...</span>}
 
       {data && (
@@ -136,7 +135,10 @@ export function Home() {
               </div>
 
               <div className="airQuality">
-                <span>{airQuality(data.current.air_quality["gb-defra-index"])}</span>
+                <span>
+                  {airQuality(data.current.air_quality["gb-defra-index"])}
+                </span>
+                
                 <strong>{data.current.air_quality["gb-defra-index"]}</strong>
               </div>
 
