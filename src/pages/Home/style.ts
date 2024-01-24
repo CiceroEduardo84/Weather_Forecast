@@ -8,228 +8,276 @@ export const Container = styled.main`
   padding: 0 3rem;
   z-index: 0;
 
-  .boxWeatherForecast {
+  article {
     width: 26rem;
-    height: 22rem;
-    /* position: relative; */
-    margin: auto;
-    border-radius: 1rem;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 
-    display: grid;
-    grid-template-areas: "b b";
-    grid-template-columns: repeat(2, 100%);
-    grid-template-rows: 100%;
+    .boxWeatherForecast {
+      width: 26rem;
+      height: 22rem;
 
-    background-color: ${({ theme }) => theme.colors.pestel.violet};
-    box-shadow: -1px 1px 3px 0px #0005;
+      margin: 0 auto;
+      border-radius: 1rem;
 
-    overflow-x: auto;
-    scrollbar-width: none;
-    scroll-snap-type: x mandatory;
+      display: grid;
+      grid-template-areas: "b b";
+      grid-template-columns: repeat(2, 100%);
+      grid-template-rows: 100%;
 
-    &::-webkit-scrollbar {
-      height: 0rem;
-      width: 100%;
-    }
+      background-color: ${({ theme }) => theme.colors.pestel.violet};
+      box-shadow: -1px 1px 3px 0px #0005;
 
-    &::-webkit-scrollbar-track {
-      display: none;
-    }
+      overflow-x: auto;
+      scrollbar-width: none;
+      scroll-snap-type: x mandatory;
 
-    &::-webkit-scrollbar-thumb {
-      display: none;
-    }
-
-    .twoClouds {
-      width: 6rem;
-      height: 3rem;
-      position: absolute;
-      top: 0.8rem;
-      right: 78%;
-      z-index: 1;
-    }
-
-    .CardTemperature {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
-
-      background: url(${clouds});
-      background-repeat: no-repeat;
-      background-size: auto;
-      background-repeat: no-repeat;
-      background-position: right bottom;
-      background-attachment: local;
-
-      scroll-snap-align: center;
-
-      .boxLocation {
+      &::-webkit-scrollbar {
+        height: 0rem;
         width: 100%;
-        padding: 0.4rem;
-        display: flex;
-        justify-content: end;
-        gap: 0.4rem;
-
-        img {
-          width: 2rem;
-          height: 2rem;
-        }
-
-        .location {
-          max-width: 55%;
-          display: flex;
-          flex-direction: column;
-
-          span {
-            width: 100%;
-            word-break: break-all;
-            font-size: 1.2rem;
-
-            color: ${({ theme }) => theme.colors.neutral.white};
-          }
-        }
       }
 
-      .temperature {
-        width: 100%;
-        padding: 0.4rem;
+      &::-webkit-scrollbar-track {
+        display: none;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        display: none;
+      }
+
+      .twoClouds {
+        width: 6rem;
+        height: 3rem;
+        position: absolute;
+        top: 0.4rem;
+        left: -1.8rem;
+        z-index: 1;
+      }
+
+      .CardTemperature {
         display: flex;
-        align-items: center;
+        justify-content: space-between;
         flex-direction: column;
-        gap: 0.4rem;
-        text-shadow: -1px 1px 3px #0005;
 
-        .datas {
+        background: url(${clouds});
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-attachment: local;
+
+        scroll-snap-align: center;
+
+        .boxLocation {
+          width: 100%;
+          padding: 0.4rem;
           display: flex;
-          align-items: center;
-          flex-direction: column;
+          justify-content: end;
+          gap: 0.4rem;
 
-          strong {
-            font-size: 6.2rem;
+          img {
+            width: 2rem;
+            height: 2rem;
+          }
+
+          .location {
+            max-width: 55%;
             display: flex;
-            justify-content: center;
-            color: ${({ theme }) => theme.colors.neutral.white};
+            flex-direction: column;
 
             span {
-              margin-top: 1.2rem;
-              font-size: 1.8rem;
+              width: 100%;
+              word-break: break-all;
+              font-size: 1.2rem;
 
               color: ${({ theme }) => theme.colors.neutral.white};
             }
           }
+        }
 
-          span {
+        .temperature {
+          width: 100%;
+          padding: 0.4rem;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          gap: 0.4rem;
+          text-shadow: -1px 1px 3px #0005;
+
+          .datas {
             display: flex;
-            gap: 0.6rem;
+            align-items: center;
+            flex-direction: column;
 
-            font-weight: bold;
-            font-size: 1.6rem;
+            strong {
+              font-size: 6.2rem;
+              display: flex;
+              justify-content: center;
+              color: ${({ theme }) => theme.colors.neutral.white};
 
-            color: ${({ theme }) => theme.colors.neutral.white};
+              span {
+                margin-top: 1.2rem;
+                font-size: 1.8rem;
+
+                color: ${({ theme }) => theme.colors.neutral.white};
+              }
+            }
 
             span {
-              filter: brightness(0.8);
+              display: flex;
+              gap: 0.6rem;
+
+              font-weight: bold;
+              font-size: 1.6rem;
+
+              color: ${({ theme }) => theme.colors.neutral.white};
+
+              span {
+                filter: brightness(0.8);
+              }
             }
+          }
+        }
+
+        .boxStatistics {
+          width: 100%;
+
+          display: flex;
+          align-items: center;
+
+          overflow-x: auto;
+          scrollbar-width: none;
+          scroll-snap-type: x mandatory;
+
+          &::-webkit-scrollbar {
+            height: 0.4rem;
+            width: 100%;
+          }
+
+          &::-webkit-scrollbar-track {
+            display: none;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            display: none;
+          }
+
+          .statistics {
+            padding: 0 0.8rem;
+            display: grid;
+            grid-template-areas: "c c c";
+            grid-template-columns: repeat(3, 12rem);
+            grid-template-rows: 6rem;
+            gap: 1rem;
           }
         }
       }
 
-      .boxStatistics {
-        width: 100%;
+      .cardAirQuality {
+        padding: 0.4rem;
 
         display: flex;
-        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
 
-        overflow-x: auto;
-        scrollbar-width: none;
-        scroll-snap-type: x mandatory;
+        scroll-snap-align: center;
+        text-shadow: -1px 1px 3px #0005;
 
-        &::-webkit-scrollbar {
-          height: 0.4rem;
+        .title {
           width: 100%;
+          margin-top: 1rem;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.8rem;
+
+          img {
+            width: 4.4rem;
+            height: 4.4rem;
+
+            filter: drop-shadow(-1px 1px 3px #0005);
+          }
+
+          span {
+            font-weight: 600;
+            font-size: 1.6rem;
+            color: ${({ theme }) => theme.colors.neutral.white};
+          }
         }
 
-        &::-webkit-scrollbar-track {
-          display: none;
+        .airQuality {
+          width: 100%;
+          height: 9.2rem;
+
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          flex-direction: column;
+
+          span,
+          strong {
+            color: ${({ theme }) => theme.colors.neutral.white};
+          }
+
+          span {
+            font-size: 1.6rem;
+          }
+
+          strong {
+            font-weight: 700;
+            font-size: 4.4rem;
+          }
         }
 
-        &::-webkit-scrollbar-thumb {
-          display: none;
-        }
-
-        .statistics {
-          padding: 0 0.8rem;
-          display: grid;
-          grid-template-areas: "c c c";
-          grid-template-columns: repeat(3, 12rem);
-          grid-template-rows: 6rem;
-          gap: 1rem;
+        .quality {
+          width: 100%;
+          display: flex;
+          flex-direction: row-reverse;
+          justify-content: space-around;
         }
       }
     }
 
-    .cardAirQuality {
-      padding: 0.4rem;
+    .boxWeekWeather {
+      width: 26rem;
+      height: 18rem;
+      margin: 0 auto;
+
+      border-radius: 1rem;
 
       display: flex;
-      justify-content: space-between;
-      flex-direction: column;
+      align-items: center;
 
-      scroll-snap-align: center;
-      text-shadow: -1px 1px 3px #0005;
+      background-color: ${({ theme }) => theme.colors.pestel.violet};
+      box-shadow: -1px 1px 3px 0px #0005;
 
-      .title {
+      overflow-x: auto;
+      scrollbar-width: none;
+      scroll-snap-type: x mandatory;
+
+      &::-webkit-scrollbar {
+        height: 0rem;
         width: 100%;
-        margin-top: 1rem;
+      }
+
+      &::-webkit-scrollbar-track {
+        display: none;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        display: none;
+      }
+
+      .week {
+        height: 16rem;
+        padding: 0 0.8rem;
 
         display: flex;
-        align-items: center;
-        justify-content: center;
         gap: 0.8rem;
-
-        img {
-          width: 4.4rem;
-          height: 4.4rem;
-
-          filter: drop-shadow(-1px 1px 3px #0005);
-        }
-
-        span {
-          font-weight: 600;
-          font-size: 1.6rem;
-          color: ${({ theme }) => theme.colors.neutral.white};
-        }
-      }
-
-      .airQuality {
-        width: 100%;
-        height: 9.2rem;
-
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        flex-direction: column;
-
-        span,
-        strong {
-          color: ${({ theme }) => theme.colors.neutral.white};
-        }
-
-        span {
-          font-size: 1.6rem;
-        }
-
-        strong {
-          font-weight: 700;
-          font-size: 4.4rem;
-        }
-      }
-
-      .quality {
-        width: 100%;
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-around;
       }
     }
   }

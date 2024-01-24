@@ -32,6 +32,19 @@ export function Home() {
     });
   };
 
+  const airQuality = (data: number) => {
+    const qualityMap: { [key: number]: string } = {
+      1: "Bom",
+      2: "Moderado",
+      3: "Insalubre p/ grupos sensíveis",
+      4: "Insalubre",
+      5: "Muito Insalubre",
+      6: "Perigoso",
+    };
+
+    return qualityMap[data] || "";
+  };
+
   if (error) console.error(error);
 
   useEffect(() => {
@@ -123,7 +136,7 @@ export function Home() {
               </div>
 
               <div className="airQuality">
-                <span>Boa</span>
+                <span>{airQuality(data.current.air_quality["gb-defra-index"])}</span>
                 <strong>{data.current.air_quality["gb-defra-index"]}</strong>
               </div>
 
@@ -168,21 +181,23 @@ export function Home() {
           </section>
 
           <section className="boxWeekWeather">
-            {data.forecast.forecastday.map(({ day, date }) => {
-              const dayDate = new Date(date).toLocaleDateString("pt-br", {
-                weekday: "long",
-              });
+            <div className="week">
+              {data.forecast.forecastday.map(({ day, date }) => {
+                const dayDate = new Date(date).toLocaleDateString("pt-br", {
+                  weekday: "short",
+                });
 
-              return (
-                <CardDays
-                  key={dayDate}
-                  name={dayDate}
-                  img={day.condition.icon}
-                  min={day.mintemp_c}
-                  max={day.maxtemp_c}
-                />
-              );
-            })}
+                return (
+                  <CardDays
+                    key={dayDate}
+                    name={dayDate}
+                    img={day.condition.icon}
+                    min={day.mintemp_c}
+                    max={day.maxtemp_c}
+                  />
+                );
+              })}
+            </div>
           </section>
         </article>
       )}
