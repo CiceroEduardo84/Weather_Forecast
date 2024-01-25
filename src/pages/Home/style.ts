@@ -2,7 +2,6 @@ import styled from "styled-components";
 import clouds from "../../assets/clouds.svg";
 
 export const Container = styled.main`
-  position: relative;
   width: 100%;
   height: calc(100vh - 6.4rem);
   padding: 0 3rem;
@@ -13,6 +12,7 @@ export const Container = styled.main`
     margin: 0 auto;
     position: relative;
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 3rem;
 
@@ -278,6 +278,59 @@ export const Container = styled.main`
 
         display: flex;
         gap: 0.8rem;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    width: 100%;
+    height: calc(100vh - 9.2rem);
+    padding: 0 3rem;
+
+    article {
+      width: fit-content;
+      gap: 5rem;
+
+      .boxWeatherForecast {
+        width: 100%;
+        height: 24rem;
+
+        margin: 0 ;
+        border-radius: 0rem;
+
+        grid-template-columns: repeat(2, 28rem);
+        gap: 2rem;
+
+        background-color: transparent;
+        box-shadow: none;
+
+        overflow-x: visible;
+
+        .CardTemperature {
+          border-radius: 1rem;
+          background-color: ${({ theme }) => theme.colors.pestel.violet};
+          box-shadow: -1px 1px 3px 0px #0005;
+        }
+
+        .cardAirQuality {
+          border-radius: 1rem;
+          background-color: ${({ theme }) => theme.colors.pestel.violet};
+          box-shadow: -1px 1px 3px 0px #0005;
+        }
+      }
+
+      .boxWeekWeather {
+        width: 100%;
+
+        overflow-x: visible;
+
+        .week {
+          width: 100%;
+          padding: 0 1.2rem;
+
+          justify-content: space-around;
+          gap: 0rem;
+        }
       }
     }
   }
