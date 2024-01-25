@@ -1,31 +1,36 @@
 import styled from "styled-components";
 
 export const Container = styled.footer`
-  width: 100%;
-  padding: 1.2rem;
+  display: none;
 
-  a {
-    width: 20rem;
-    height: 4rem;
-    margin: auto;
-    padding: 0.8rem;
+  @media (min-width: 768px) {
+    width: 100%;
+    display: block;
+    padding: 3rem;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    a {
+      width: 58rem;
+      height: 6.4rem;
+      margin: auto;
+      padding: 0.8rem;
 
-    font-weight: 500;
-    font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-    border-radius: 1rem;
-    box-shadow: -1px 1px 3px 0px #0005;
-    color: ${({ theme }) => theme.colors.neutral.white};
-    background-color: ${({ theme }) => theme.colors.pestel.violet};
-  }
+      font-weight: 500;
+      font-size: 1.6rem;
 
-  a:hover {
-    cursor: pointer;
-    filter: brightness(1.1);
-    transform: scale(1.01);
+      border-radius: 1rem;
+      box-shadow: -1px 1px 3px 0px #0005;
+      color: ${({ theme }) => theme.colors.neutral.white};
+      background-color: ${({ theme }) => theme.colors.pestel.violet};
+    }
+
+    a:hover {
+      cursor: pointer;
+      filter: brightness(1.1);
+      transform: scale(1.01);
+    }
   }
 `;

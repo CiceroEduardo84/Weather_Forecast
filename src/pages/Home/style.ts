@@ -284,8 +284,8 @@ export const Container = styled.main`
 
   @media (min-width: 768px) {
     width: 100%;
-    height: calc(100vh - 9.2rem);
-    padding: 0 3rem;
+    height: auto;
+    /* padding: 0 3rem 3rem; */
 
     article {
       width: fit-content;
@@ -295,7 +295,7 @@ export const Container = styled.main`
         width: 100%;
         height: 24rem;
 
-        margin: 0 ;
+        margin: 0;
         border-radius: 0rem;
 
         grid-template-columns: repeat(2, 28rem);
