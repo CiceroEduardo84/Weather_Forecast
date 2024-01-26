@@ -36,7 +36,7 @@ export const Container = styled.footer`
 
   @media (min-width: 1024px) {
     a {
-      width: 58.8rem;
+      width: 63rem;
     }
   }
 `;

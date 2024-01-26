@@ -15,6 +15,7 @@ export const Container = styled.main`
     align-items: center;
     flex-direction: column;
     gap: 3rem;
+    animation: fadeInAnimation ease 1s forwards;
 
     .boxWeatherForecast {
       width: 26rem;
@@ -282,6 +283,15 @@ export const Container = styled.main`
     }
   }
 
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
   @media (min-width: 768px) {
     width: 100%;
     height: auto;
@@ -340,7 +350,9 @@ export const Container = styled.main`
 
       .boxWeatherForecast {
         height: 28rem;
-        gap: 2.8rem;
+
+        grid-template-columns: 36rem 24rem;
+        gap: 3rem;
 
         .twoClouds {
           width: 8rem;
