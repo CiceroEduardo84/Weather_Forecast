@@ -285,7 +285,6 @@ export const Container = styled.main`
   @media (min-width: 768px) {
     width: 100%;
     height: auto;
-    /* padding: 0 3rem 3rem; */
 
     article {
       width: fit-content;
@@ -330,6 +329,28 @@ export const Container = styled.main`
 
           justify-content: space-around;
           gap: 0rem;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    article {
+      gap: 3rem;
+
+      .boxWeatherForecast {
+        height: 28rem;
+        gap: 2.8rem;
+
+        .twoClouds {
+          width: 8rem;
+          height: 4rem;
+          top: 0.8rem;
+          left: -2.8rem;
+        }
+
+        .cardAirQuality {
+          height: 24rem;
         }
       }
     }

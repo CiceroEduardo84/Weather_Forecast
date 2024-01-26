@@ -33,4 +33,10 @@ export const Container = styled.footer`
       transform: scale(1.01);
     }
   }
+
+  @media (min-width: 1024px) {
+    a {
+      width: 58.8rem;
+    }
+  }
 `;
