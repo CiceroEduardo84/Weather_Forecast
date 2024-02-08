@@ -75,7 +75,7 @@ export const Container = styled.header`
 
   /* Works on Chrome, Edge, and Safari */
   .boxSearch::-webkit-scrollbar {
-    width: 0.8rem;
+    width: 0rem;
   }
 
   .boxSearch::-webkit-scrollbar-track {
@@ -109,6 +109,10 @@ export const Container = styled.header`
       height: auto;
       max-height: 32rem;
       top: 9.2rem;
+    }
+
+    .boxSearch::-webkit-scrollbar {
+      width: 0.8rem;
     }
   }
 

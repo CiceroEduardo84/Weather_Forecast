@@ -81,27 +81,6 @@ export function Header() {
                 />
               </Link>
             ))}
-
-{data.map(({ id, name, region, country }) => (
-              <Link key={name} to={`/${name}`} onClick={onClick}>
-                <CardSearch
-                  key={id}
-                  name={name}
-                  region={region}
-                  country={country}
-                />
-              </Link>
-            ))}
-                        {data.map(({ id, name, region, country }) => (
-              <Link key={name} to={`/${name}`} onClick={onClick}>
-                <CardSearch
-                  key={id}
-                  name={name}
-                  region={region}
-                  country={country}
-                />
-              </Link>
-            ))} 
           </div>
         </div>
       )}
