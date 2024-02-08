@@ -364,6 +364,15 @@ export const Container = styled.main`
           left: -2.8rem;
         }
 
+        .CardTemperature {
+          .boxStatistics {
+            .statistics {
+              grid-template-columns: repeat(3, 14rem);
+              grid-template-rows: 6rem;
+            }
+          }
+        }
+
         .cardAirQuality {
           height: 24rem;
         }
