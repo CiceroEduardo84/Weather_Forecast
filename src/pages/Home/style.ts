@@ -243,7 +243,7 @@ export const Container = styled.main`
 
     .boxWeekWeather {
       width: 100%;
-      height: 32vh;
+      height: 28vh;
       margin: 0 auto;
 
       border-radius: 1rem;
