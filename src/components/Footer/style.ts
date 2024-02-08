@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.footer`
     width: 100%;
-    padding: 3rem;
+    padding: 0 3rem 3rem 3rem;
 
     a {
       max-width: 38rem;

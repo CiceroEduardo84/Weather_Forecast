@@ -49,7 +49,7 @@ export function Home() {
 
   useEffect(() => {
     if (divRef.current && !isLoading) {
-      divRef.current.scrollTo({ left: 60 });
+      divRef.current.scrollTo({ left: 50 });
     }
   }, [isLoading, divRef, data]);
 

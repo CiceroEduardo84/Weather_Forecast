@@ -54,8 +54,9 @@ export const Container = styled.header`
   .boxSearch {
     position: fixed;
     width: 32rem;
-    height: calc(100vh - 6.4rem);
+    max-height: 36rem;
     top: 6.4rem;
+    border-radius: 10px;
     padding: 0.4rem 0.4rem;
     background-color: ${({ theme }) => theme.colors.neutral.white};
     overflow-y: auto;
@@ -74,7 +75,7 @@ export const Container = styled.header`
 
   /* Works on Chrome, Edge, and Safari */
   .boxSearch::-webkit-scrollbar {
-    width: 0rem;
+    width: 0.8rem;
   }
 
   .boxSearch::-webkit-scrollbar-track {
@@ -108,11 +109,6 @@ export const Container = styled.header`
       height: auto;
       max-height: 32rem;
       top: 9.2rem;
-      border-radius: 10px;
-    }
-
-    .boxSearch::-webkit-scrollbar {
-      width: 0.8rem;
     }
   }
 
@@ -133,7 +129,6 @@ export const Container = styled.header`
 
     .boxSearch {
       min-width: 41rem;
-      max-height: 36rem;
       top: 9.6rem;
     }
   }
