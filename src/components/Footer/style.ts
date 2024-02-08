@@ -31,15 +31,16 @@ export const Container = styled.footer`
 
   @media (min-width: 768px) {
     width: 100%;
+    padding: 3rem;
 
     a {
-      width: 58rem;
+      max-width: 58rem;
     }
   }
 
   @media (min-width: 1024px) {
     a {
-      width: 63rem;
+      max-width: 63rem;
     }
   }
 `;

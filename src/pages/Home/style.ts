@@ -295,6 +295,7 @@ export const Container = styled.main`
     height: auto;
 
     article {
+      max-width: none;
       width: fit-content;
       gap: 5rem;
 
@@ -303,7 +304,6 @@ export const Container = styled.main`
         height: 24rem;
 
         margin: 0;
-        border-radius: 0rem;
 
         grid-template-columns: repeat(2, 28rem);
         gap: 2rem;
@@ -317,6 +317,11 @@ export const Container = styled.main`
           border-radius: 1rem;
           background-color: ${({ theme }) => theme.colors.pestel.violet};
           box-shadow: -1px 1px 3px 0px #0005;
+
+          .boxStatistics {
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+          }
         }
 
         .cardAirQuality {
