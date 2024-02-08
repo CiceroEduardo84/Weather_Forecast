@@ -14,7 +14,7 @@ Explore as condições climáticas atuais e futuras de qualquer localidade de fo
 - Totalmente responsivo.
 - Página com informações meteorológicas.
 - Campo de busca ao digitar nome da cidade.
-- Integração com Weather API.
+- Navegação inteligente.
 
 ## Tecnologias Utilizadas
 
@@ -64,4 +64,4 @@ $ git checkout -b nome-sobrenome
 ## Links
 
 - [Deploy](https://weather-forecast-gamma-fawn.vercel.app/)
-- [PokeAPI](https://www.weatherapi.com/)
+- [WeatherAPI](https://www.weatherapi.com/)
