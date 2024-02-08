@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.footer`
     width: 100%;
-    padding: 2rem;
+    padding: 3rem;
 
     a {
       width: 100%;
@@ -31,7 +31,6 @@ export const Container = styled.footer`
 
   @media (min-width: 768px) {
     width: 100%;
-    padding: 3rem;
 
     a {
       width: 58rem;

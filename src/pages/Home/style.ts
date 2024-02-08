@@ -3,12 +3,11 @@ import clouds from "../../assets/clouds.svg";
 
 export const Container = styled.main`
   width: 100%;
-  height: calc(100vh - 6.4rem);
   padding: 0 3rem;
   z-index: 0;
 
   article {
-    width: 26rem;
+    max-width: 38rem;
     margin: 0 auto;
     position: relative;
     display: flex;
@@ -18,7 +17,7 @@ export const Container = styled.main`
     animation: fadeInAnimation ease 1s forwards;
 
     .boxWeatherForecast {
-      width: 26rem;
+      width: 100%;
       height: 22rem;
 
       margin: 0 auto;
@@ -244,7 +243,7 @@ export const Container = styled.main`
     }
 
     .boxWeekWeather {
-      width: 26rem;
+      width: 100%;
       height: 18rem;
       margin: 0 auto;
 
