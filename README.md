@@ -8,7 +8,9 @@ Explore as condições climáticas atuais e futuras de qualquer localidade de fo
 </div>
 
 ![home-layout](./src/assets/home_layout.png)
-
+<a href="https://www.figma.com/file/l10CuyxHdavQpOKXR7QadW/Weather-Forecast?type=design&t=zyhqnbSn0rjYe04D-6">
+  <img src="https://img.shields.io/badge/Acessar%20Layout%20-Figma-%2304D361">
+</a>
 ## Funcionalidades
 
 - Totalmente responsivo.
@@ -42,8 +44,8 @@ $ npm run dev
 ## Variáveis Ambiente
 
 ```ini
-VITE_API = "http://api.weatherapi.com/v1/forecast.json?"
-VITE_API_SEARCH = "http://api.weatherapi.com/v1/search.json?"
+VITE_API = "https://api.weatherapi.com/v1/forecast.json?"
+VITE_API_SEARCH = "https://api.weatherapi.com/v1/search.json?"
 VITE_KEY = "API KEY"
 ```
 
@@ -65,3 +67,18 @@ $ git checkout -b nome-sobrenome
 
 - [Deploy](https://weather-forecast-gamma-fawn.vercel.app/)
 - [WeatherAPI](https://www.weatherapi.com/)
+
+## Autor
+
+<p>
+    <a href="https://github.com/CiceroEduardo84">
+        <img src="https://avatars.githubusercontent.com/u/132598847?v=4" width="100px;" alt=""/>
+        <br />
+        <b>Cicero Eduardo</b>
+    </a>
+</p>
+
+[![Linkedin Badge](https://img.shields.io/badge/-Cicero%20Eduardo-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/1-cicero-eduardo/)](https://www.linkedin.com/in/1-cicero-eduardo/)
+[![Gmail Badge](https://img.shields.io/badge/-ciceroeduardobarbosa@hotmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:ciceroeduardobarbosa@hotmail.com)](mailto:ciceroeduardobarbosa@hotmail.com)
+
+---
