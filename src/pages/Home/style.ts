@@ -18,7 +18,7 @@ export const Container = styled.main`
 
     .boxWeatherForecast {
       width: 100%;
-      height: 22rem;
+      height: 40vh;
 
       margin: 0 auto;
       border-radius: 1rem;
@@ -144,7 +144,6 @@ export const Container = styled.main`
 
         .boxStatistics {
           width: 100%;
-
           display: flex;
           align-items: center;
 

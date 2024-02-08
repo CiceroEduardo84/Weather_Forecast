@@ -5,7 +5,7 @@ export const Container = styled.footer`
     padding: 3rem;
 
     a {
-      width: 100%;
+      max-width: 38rem;
       height: 6.4rem;
       margin: auto;
       padding: 0.8rem;
