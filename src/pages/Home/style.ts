@@ -49,8 +49,8 @@ export const Container = styled.main`
       }
 
       .twoClouds {
-        width: 6rem;
-        height: 3rem;
+        width: clamp(6.4rem, 2.5vw, 6.8rem);
+        height: clamp(3rem, 2.5vw, 3.6rem);
         position: absolute;
         top: 0.4rem;
         left: -1.8rem;
@@ -113,14 +113,14 @@ export const Container = styled.main`
             flex-direction: column;
 
             strong {
-              font-size: 6.2rem;
+              font-size: clamp(6.2rem, 2.5vw, 7.2rem);
               display: flex;
               justify-content: center;
               color: ${({ theme }) => theme.colors.neutral.white};
 
               span {
                 margin-top: 1.2rem;
-                font-size: 1.8rem;
+                font-size: clamp(1.8rem, 2.5vw, 2.4rem);
 
                 color: ${({ theme }) => theme.colors.neutral.white};
               }
@@ -131,7 +131,7 @@ export const Container = styled.main`
               gap: 0.6rem;
 
               font-weight: bold;
-              font-size: 1.6rem;
+              font-size: clamp(1.6rem, 2.5vw, 2rem);
 
               color: ${({ theme }) => theme.colors.neutral.white};
 
