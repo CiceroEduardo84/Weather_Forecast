@@ -78,9 +78,9 @@ export function Home() {
                 </Link>
 
                 <div className="location">
+                  <span>{data.location.name}</span>
                   <span>
-                    {data.location.name}-{data.location.region},
-                    {data.location.country}
+                    {data.location.region},{data.location.country}
                   </span>
                   <span>{localData(data.location.localtime)}</span>
                 </div>
@@ -138,7 +138,7 @@ export function Home() {
                 <span>
                   {airQuality(data.current.air_quality["gb-defra-index"])}
                 </span>
-                
+
                 <strong>{data.current.air_quality["gb-defra-index"]}</strong>
               </div>
 
