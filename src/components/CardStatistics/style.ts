@@ -36,10 +36,22 @@ export const Container = styled.div`
     }
 
     strong {
-      font-size: 1.8rem;
+      font-size: 1.4rem;
 
       span {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .datas {
+      strong {
+        font-size: 1.8rem;
+
+        span {
+          font-size: 1.4rem;
+        }
       }
     }
   }
